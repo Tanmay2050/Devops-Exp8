@@ -1,102 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Webpage</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            background: #555;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 20px;
-        }
-        .card {
-            background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        button {
-            padding: 10px 15px;
-            background: #28a745;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #218838;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Webpage</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        color: white;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        margin-top: 10px;
+        opacity: 0.9;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        background: #667eea;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #5a67d8;
+    }
+
+    .counter {
+        font-size: 2rem;
+        margin-top: 10px;
+        color: #667eea;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: white;
+        margin-top: 40px;
+    }
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>My Website</h1>
-    <p>Welcome to my simple HTML page</p>
+    <h1>🚀 Modern Webpage</h1>
+    <p>Beautiful UI with animation and interactivity</p>
 </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-</nav>
-
 <div class="container">
-    <div class="card">
-        <h2>About</h2>
-        <p>This is a basic webpage built using only one HTML file.</p>
-    </div>
+    <div class="grid">
 
-    <div class="card">
-        <h2>Click Counter</h2>
-        <p>Button clicked <span id="count">0</span> times.</p>
-        <button onclick="increaseCount()">Click Me</button>
+        <div class="card">
+            <h2>✨ About</h2>
+            <p>This is a modern responsive webpage built in a single HTML file.</p>
+        </div>
+
+        <div class="card">
+            <h2>📊 Counter</h2>
+            <div class="counter" id="count">0</div>
+            <button onclick="increase()">Increase</button>
+        </div>
+
+        <div class="card">
+            <h2>🌙 Theme Toggle</h2>
+            <p>Switch between light and dark mode.</p>
+            <button onclick="toggleTheme()">Toggle Theme</button>
+        </div>
+
+        <div class="card">
+            <h2>💡 Alert Box</h2>
+            <p>Click below to see interaction.</p>
+            <button onclick="showAlert()">Click Me</button>
+        </div>
+
     </div>
 </div>
 
 <footer>
-    <p>© 2026 My Website</p>
+    <p>© 2026 Modern Design</p>
 </footer>
 
 <script>
     let count = 0;
-    function increaseCount() {
+
+    function increase() {
         count++;
         document.getElementById("count").innerText = count;
+    }
+
+    function toggleTheme() {
+        if (document.body.style.background.includes("rgb")) {
+            document.body.style.background = "linear-gradient(135deg, #667eea, #764ba2)";
+            document.body.style.color = "#333";
+        } else {
+            document.body.style.background = "#111";
+            document.body.style.color = "#eee";
+        }
+    }
+
+    function showAlert() {
+        alert("Hello! This is an interactive webpage 🚀");
     }
 </script>
 
